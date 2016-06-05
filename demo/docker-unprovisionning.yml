@@ -8,6 +8,6 @@
   gather_facts: no
 
   roles:
-    - { role : docker_unprovisionning,
+    - { role : arnaudblancher.docker_unprovisionning,
       docker_unprovisionning_net: "ansible_myplateform" }
 
