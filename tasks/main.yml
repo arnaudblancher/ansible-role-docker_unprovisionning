@@ -1,0 +1,11 @@
+---
+
+- name: "destroy docker containers"
+  docker: name="{{item}}" state=absent image=none stop_timeout=1
+  with_items: "{{groups['all']}}"
+
+- name: "remove docker network {{ docker_unprovisionning_net }}"
+  shell: docker network rm {{ docker_unprovisionning_net }} || echo "Does not exist"
+  register: _
+  changed_when: "'not found' not in _.stderr"
+

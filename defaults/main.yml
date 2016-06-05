@@ -1,0 +1,6 @@
+---
+
+# the name of the docker network witch will be destroy
+docker_unprovisionning_net: "ansible_plateform"
+
+

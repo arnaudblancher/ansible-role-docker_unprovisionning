@@ -1,0 +1,13 @@
+# call
+# ansible-playbook -i ./inventory/docker/ docker-unprovisionning.yml
+
+---
+
+- name: "remove docker containers and network"
+  hosts: localhost
+  gather_facts: no
+
+  roles:
+    - { role : docker_unprovisionning,
+      docker_unprovisionning_net: "ansible_myplateform" }
+
